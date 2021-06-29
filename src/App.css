@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: gunship;
+  src: url("./res/font/gunship.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  color: black;
+  margin: 0;
+  height: 200vh;
+  font-family: gunship;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: url("res/background/background.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25%;
 }
 
-.App-link {
-  color: #61dafb;
+.logo_section1 {
+  flex: 4;
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+  height: 80%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo_section1_img {
+  flex: 1;
+  flex-basis: 80%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  height: 20%;
+}
+
+.btn {
+  flex: 1.25;
+  font-family: gunship;
+  font-size: 2vw;
+  height: 100%;
+  width: 25%;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btn:hover {
+  background-color: #ff588a;
+  color: #edf76d;
+}
+
+.btn:focus {
+  background-color: #58f0e3;
+  color: #ff709b;
+}
+
+.section2 {
+  background-image: url("res/background/background.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10vh 10%;
+  border-radius: 50px;
+}
+
+.video_section2 {
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+  padding: 5%;
+  display: flex;
+}
+
+.react-player {
+  flex: 1;
+}
+
+.section4 {
+  display: flex;
+  flex-direction: column;
+  margin: 10vh 10%;
+}
+
+.top_section4 {
+  display: flex;
+}
+
+.bottom_section4 {
+  display: flex;
+}
+
+.card {
+  margin: 2%;
+  flex: 1;
+}
+
+img {
+  border-radius: 50px;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

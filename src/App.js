@@ -1,16 +1,18 @@
-import styles from './App.css';
+import './App.css';
 import logo from './res/logo/logo.png';
-import VideoPlayer from 'react-player';
 import ReactPlayer from 'react-player';
-import React from 'react';
+import { Canvas } from '@react-three/fiber';
+import React, {Suspense} from 'react';
 import member from './res/images/dummy.png';
+import Model from './Pink';
+import { OrbitControls } from "@react-three/drei";
+import { AmbientLight } from 'three';
 
 class App extends React.Component {
   
-
-
   render(){
     return (
+      
       <body>
         <div className="section1" id="section1">
           <div className="logo_section1" id="logo_section1">
@@ -27,7 +29,7 @@ class App extends React.Component {
           <div className="video_section2" id="video_section2">
             <ReactPlayer
               className="react-player"
-              url="https://youtu.be/BGhqlJnFIXU"
+              url="https://www.youtube.com/watch?v=cNF3pLM2OXE"
               controls={true}
               config={{
                 youtube: {
@@ -37,9 +39,28 @@ class App extends React.Component {
             />
           </div>
         </div>
-        {/* <div className="section3" id="section3">
-
-        </div> */}
+        
+        <div className="section3" id="section3">
+          <h1>Our Troll-E Mock Up</h1>
+          <div class="canvasContainer">
+          <Canvas className="modelCanvas" camera={{ position: [12, 10, -10], fov: 15}} >
+            <pointLight position={[0, 10, 0]}/>
+            <pointLight position={[10, 0, 0]}/>
+            <pointLight position={[0, 0, 10]}/>
+            <Suspense fallback={null}>
+              <Model className="model" />
+            </Suspense>
+            <OrbitControls/>
+          </Canvas>
+          </div>
+          <p>
+            <img className="mouseIcon" src="https://img.icons8.com/material/30/000000/mouse-left-click.png"/> Hold to Rotate  
+            <span/>    
+              <img className="mouseIcon" src="https://img.icons8.com/material/30/000000/mouse-right-click.png"/> Hold to Drag
+            <span/> 
+              <img className="mouseIcon" src="https://img.icons8.com/material/30/000000/mouse-scrolling.png"/> Zoom In/Zoom Out
+          </p>
+        </div>
 
         <div className="section4" id="section4">
           <div className="top_section4">

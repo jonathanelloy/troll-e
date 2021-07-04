@@ -14,6 +14,7 @@ body {
 
 p {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: medium;
 }
 
 .section1 {
@@ -110,9 +111,30 @@ p {
   flex: 1;
 }
 
+.text {
+  border: 7px solid black;
+}
+
+.member:hover {
+  cursor: pointer;
+}
+
 .image {
+  border: black solid 2px;
+  background-color: white;
+  margin: 0;
+  box-shadow: unset;
+  transition: width 0.3s ease-in-out, padding 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
   border-radius: 100%;
   width: 100%;
+  padding: 0;
+}
+
+.image:hover {
+  background-color: palevioletred;
+  width: 80%;
+  padding: 10%;
 }
 
 .section3 {
@@ -130,13 +152,8 @@ p {
   height: 100%;
 }
 
-.model {
-  color: #ffffff;
-}
-
 .canvasContainer {
   align-self: center;
-
   flex: 1;
   width: 50%;
   height: 100%;
@@ -150,6 +167,35 @@ p {
 
 .section3 span {
   margin: 3ch;
+}
+
+.Modal {
+  position: absolute;
+  width: 74%;
+  height: 60%;
+  left: 13%;
+  top: 15%;
+}
+
+.modal {
+  color: white;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }
 
 code {
